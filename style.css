@@ -29,10 +29,10 @@ body {
 	--dot1: radial-gradient(circle at 50% 50%, var(--bush) 0 0.25vmin, #fff0 calc(0.25vmin + 1px) 100%);
 	--dot2: radial-gradient(circle at 50% 50%, var(--bush) 0 0.5vmin, #fff0 calc(0.5vmin + 1px) 100%);
 	--dot3: radial-gradient(circle at 50% 50%, var(--bush) 0 1.15vmin, #fff0 calc(1.15vmin + 1px) 100%);
-	--glass: 337deg;
-	--luz1: hsl(var(--glass) 60% 50% / 60%);
-	--luz2: hsl(var(--glass) 54% 32%);
-	--luz3: hsl(var(--glass) 54% 25%);
+	--glass: 199deg;
+	--luz1: hsl(var(--glass) 29% 68% / 60%);
+	--luz2: hsl(var(--glass) 24% 40%);
+	--luz3: hsl(var(--glass) 24% 32%);
 	transition: --glass 3s;
 	width: 80vmin;
 	height: 100vh;
@@ -50,8 +50,8 @@ body {
 	--width: 20;
 	--depth: 20;
 	--height: 20;
-	--hue: 235;
-	--sat: 25%;
+	--hue: 32;
+	--sat: 9%;
 	height: calc(var(--height) * 1vmin);
 	width: calc(var(--width) * 1vmin);
 	position: absolute;
@@ -65,13 +65,15 @@ body {
 	height: 100%;
 	width: 100%;
 	border-radius: 1px;
+	background-color: hsl(32, 12%, 42%);
 }
 
 
+
 .cuboid .side:nth-of-type(1) {
-	--sat: 40%;
+	--sat: 12%;
 	transform: translate3d(-50%, -50%, calc(var(--depth) * 0.5vmin));
-	background: hsl(var(--hue), var(--sat), 18%);
+	background: hsl(var(--hue), var(--sat), 42%);
 }
 .cuboid .side:nth-of-type(2) {
 	transform: translate3d(-50%, -50%, calc(var(--depth) * -0.5vmin))
@@ -233,7 +235,7 @@ span {
 	height: 30%;
 	top: -1px;
 	left: -1px;
-	background: repeating-linear-gradient(180deg, black, #383e70);
+	background: repeating-linear-gradient(180deg, black, #D0D4CA);
 	background-size: 100% 0.35vmin;
 	box-shadow: 0.01vmin 0.75vmin 0.15vmin 0.125vmin #0005 inset;
 }
@@ -250,7 +252,7 @@ span {
 	width: 40%;
 	height: 100%;
 	left: 20%;
-	background: repeating-linear-gradient(180deg, #101010, transparent), repeating-linear-gradient(90deg, #383e70 0 calc(100% - 0.25vmin), var(--frame) calc(100% - 0.25vmin) 100%);
+	background: repeating-linear-gradient(180deg, #101010, transparent), repeating-linear-gradient(90deg, #D0D4CA 0 calc(100% - 0.25vmin), var(--frame) calc(100% - 0.25vmin) 100%);
 	background-size: 100% 0.365vmin, 8vmin 100%;
 }
 
@@ -290,7 +292,7 @@ span {
 
 /* F 3 */
 .floor.three .side:nth-of-type(1):after {
-	background: #1c1f3e;
+	background: gray;
 	left: 40.25%;
 	width: 19.75%;
 	box-shadow: 0.2vmin 0.525vmin 0.5vmin 0.125vmin #0006 inset;
@@ -384,14 +386,14 @@ span {
 	left: -0.1vmin;
 	box-shadow: 0.025vmin 0.7vmin 0.25vmin 0.125vmin #0006 inset;
 	width: 40.25%;
-	background: repeating-linear-gradient(90deg, #101010, transparent), repeating-linear-gradient(90deg, #383e70 0 calc(100% - 0.25vmin), var(--frame) calc(100% - 0.25vmin) 100%);
+	background: repeating-linear-gradient(90deg, #101010, transparent), repeating-linear-gradient(90deg, #D0D4CA 0 calc(100% - 0.25vmin), var(--frame) calc(100% - 0.25vmin) 100%);
 	background-size: 0.25vmin 100%, 8vmin 100%;
 }
 
 .floor.six .side:nth-of-type(1):after {
 	left: 60%;
 	width: 40%;
-	background: repeating-linear-gradient(90deg, #101010, transparent), repeating-linear-gradient(90deg, #383e70 0 calc(100% - 0.25vmin), var(--frame) calc(100% - 0.25vmin) 100%);
+	background: repeating-linear-gradient(90deg, #101010, transparent), repeating-linear-gradient(90deg, #D0D4CA 0 calc(100% - 0.25vmin), var(--frame) calc(100% - 0.25vmin) 100%);
 	background-size: 0.25vmin 100%, 8vmin 100%;
 }
 
@@ -496,7 +498,7 @@ span {
 /* F 4 */
 .floor.four .side:nth-of-type(3):before, .floor.four .side:nth-of-type(3):after {
 	left: 35.25%;
-	background: repeating-linear-gradient(90deg, #1d1e26, transparent), repeating-linear-gradient(90deg, #383e70 0 calc(100% - 0.25vmin), var(--frame) calc(100% - 0.25vmin) 100%);
+	background: repeating-linear-gradient(90deg, #1d1e26, transparent), repeating-linear-gradient(90deg, #D0D4CA 0 calc(100% - 0.25vmin), var(--frame) calc(100% - 0.25vmin) 100%);
 	background-size: 2.5vmin 100%, 33vmin 100%;
 }
 
@@ -540,7 +542,7 @@ span {
 	left: 35.25%;
 	width: 34.25%;
 	top: -1px;
-	background: #2c315a;
+	background: gray;
 	box-shadow: -1.975vmin 1.75vmin 1.5vmin 0.125vmin #0005 inset, 0.025vmin 1.75vmin 0.4vmin 0.125vmin #0002 inset;
 }
 
@@ -549,7 +551,7 @@ span {
 	left: 70.75%;
 	width: 29.25%;
 	top: -1px;
-	background: #2c315a;
+	background: gray;
 	box-shadow: -1.975vmin 1.75vmin 1.5vmin 0.125vmin #0005 inset, 0.025vmin 1.75vmin 0.4vmin 0.125vmin #0002 inset;
 }
 
@@ -580,7 +582,7 @@ span {
 .floor.six .side:nth-of-type(3):before,
 .floor.six .side:nth-of-type(3):after  {
 	left: 0;
-	background: repeating-linear-gradient(90deg, #1d1e26, transparent), repeating-linear-gradient(90deg, #383e70 0 calc(100% - 0.25vmin), var(--frame) calc(100% - 0.25vmin) 100%);
+	background: repeating-linear-gradient(90deg, #1d1e26, transparent), repeating-linear-gradient(90deg, #D0D4CA 0 calc(100% - 0.25vmin), var(--frame) calc(100% - 0.25vmin) 100%);
 	background-size: 1.85vmin 100%, 33vmin 100%;
 }
 
@@ -593,7 +595,7 @@ span {
 /* F 8 */
 .floor.eight .side:nth-of-type(3):before {
 	left: 0;
-	background: repeating-linear-gradient(90deg, #101010, transparent), repeating-linear-gradient(90deg, #383e70 0 calc(100% - 0.25vmin), var(--frame) calc(100% - 0.25vmin) 100%);
+	background: repeating-linear-gradient(90deg, #101010, transparent), repeating-linear-gradient(90deg, #D0D4CA 0 calc(100% - 0.25vmin), var(--frame) calc(100% - 0.25vmin) 100%);
 	background-size: 2.55vmin 100%, 33vmin 100%;
 }
 
@@ -601,7 +603,7 @@ span {
 	left: 64vmin;
 	bottom: -19.85vmin;
 	width: 29.65%;
-	background: repeating-linear-gradient(90deg, #1d1e26, transparent), repeating-linear-gradient(90deg, #383e70 0 calc(100% - 0.25vmin), var(--frame) calc(100% - 0.25vmin) 100%);
+	background: repeating-linear-gradient(90deg, #1d1e26, transparent), repeating-linear-gradient(90deg, #D0D4CA 0 calc(100% - 0.25vmin), var(--frame) calc(100% - 0.25vmin) 100%);
 	background-size: 1.85vmin 100%, 33vmin 100%;
 }
 
