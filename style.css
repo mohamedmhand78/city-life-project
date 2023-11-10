@@ -20,10 +20,15 @@ body {
 	display: flex;
 	align-items: flex-end;
 	justify-content: center;
+	--cbz: cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 
 .content {
 	--frame: #070b32;
+	--bush: #181b38;
+	--dot1: radial-gradient(circle at 50% 50%, var(--bush) 0 0.25vmin, #fff0 calc(0.25vmin + 1px) 100%);
+	--dot2: radial-gradient(circle at 50% 50%, var(--bush) 0 0.5vmin, #fff0 calc(0.5vmin + 1px) 100%);
+	--dot3: radial-gradient(circle at 50% 50%, var(--bush) 0 1.15vmin, #fff0 calc(1.15vmin + 1px) 100%);
 	--glass: 337deg;
 	--luz1: hsl(var(--glass) 60% 50% / 60%);
 	--luz2: hsl(var(--glass) 54% 32%);
@@ -34,6 +39,7 @@ body {
 	display: flex;
 	align-items: flex-end;
 	justify-content: center;
+	animation: start-glass 3s var(--cbz) 0s 1;
 }
 
 
@@ -120,6 +126,11 @@ body {
 
 .floor.two { bottom: 5vmin; }
 .floor.three { bottom: 15vmin; }
+.floor.four { bottom: 25vmin; }
+.floor.five { bottom: 35vmin; }
+.floor.six { bottom: 45vmin; }
+/* .floor.seven { bottom: 55vmin; } */
+/* .floor.eight { bottom: 65vmin; }  */
 
 .floor .side:nth-of-type(1) {
 	background: 
@@ -159,6 +170,10 @@ body {
 
 .roof.two { bottom: 13vmin; }
 .roof.three { bottom: 23vmin; }
+.roof.four { bottom: 33vmin; }
+.roof.five { bottom: 43vmin; }
+.roof.six { bottom: 53vmin; }
+
 
 
 
@@ -251,6 +266,106 @@ span {
 }
 
 
+/* F 4 */
+.floor.four .side:nth-of-type(1):before,
+.floor.eight .side:nth-of-type(1):before {
+	position: absolute;
+	content: "";
+	width: 60%;
+	height: 100%;
+	left: 40%;
+	--luz1: #434770;
+	--lines-front: repeating-linear-gradient(90deg, var(--luz1) 0% calc(100% - 0.275vmin), var(--frame) calc(100% - 0.275vmin) 100%);
+	background: repeating-linear-gradient(90deg, black, transparent), linear-gradient(91deg, #fff0 35%, #000 calc(36% + 1px) 52%, #fff0 52%), linear-gradient(-91deg, #fff0 36%, #000 calc(37% + 1px) 55%, #fff0 55%), var(--lines-front), repeating-linear-gradient(90deg, #364e69, #141f59);
+	background-size: 0.35vmin 100%, 100% 100%, 100% 100%, 33.6% 100%, 4% 100%;
+	z-index: 1;
+}
+
+.floor.four .side:nth-child(1):after {
+	box-shadow: 0.05vmin 0.7vmin 0.25vmin 0.125vmin #0006 inset, 7.5vmin -7.3vmin 0 0 #0a0d29;
+	left: -1px;
+	width: 81%;
+}
+
+.floor.four .side:nth-of-type(1):before {
+	background: repeating-linear-gradient(90deg, black, transparent), linear-gradient(94deg, #fff0 41%, #000 calc(42% + 1px) 52%, #fff0 52%), linear-gradient(-95deg, #fff0 45%, #000 calc(46% + 1px) 55%, #fff0 55%), var(--lines-front), repeating-linear-gradient(90deg, #364e69, #141f59);
+	background-size: 0.375vmin 100%, 100% 100%, 100% 100%, 33.6% 100%, 4% 100%;
+	left: 0;
+}
+
+.roof.four .side:nth-child(1):before {
+	content: "";
+	position: absolute;
+	width: 25%;
+	height: 3vmin;
+	top: -3vmin;
+	left: 25vmin;
+	background: radial-gradient(circle at 13% 98%, var(--luz3) 0.5vmin, #fff0 calc(0.5vmin + 1px)), radial-gradient(circle at 11% 79%, var(--luz3) 0.25vmin, #fff0 calc(0.25vmin + 1px)), radial-gradient(circle at 16% 84%, var(--luz3) 0.125vmin, #fff0 calc(0.125vmin + 1px)), radial-gradient(circle at 21% 95%, var(--luz3) 0.25vmin, #fff0 calc(0.25vmin + 1px)), radial-gradient(circle at 25% 98%, var(--luz3) 0.25vmin, #fff0 calc(0.25vmin + 1px)), radial-gradient(circle at 28% 91%, var(--luz3) 0.175vmin, #fff0 calc(0.175vmin + 1px)), radial-gradient(circle at 30% 84%, var(--luz3) 0.175vmin, #fff0 calc(0.175vmin + 1px)), radial-gradient(circle at 10% 70%, var(--luz3) 0.175vmin, #fff0 calc(0.175vmin + 1px));
+	background-repeat: no-repeat;
+	filter: drop-shadow(2vmin 0vmin 0px var(--luz3)) drop-shadow(3vmin 0vmin 0px var(--luz3));
+}
+
+
+/* F 5 */
+.floor.five .side:nth-of-type(1):before {
+	width: 19.25%;
+	left: 40.75%;
+}
+
+.floor.five .side:nth-child(1) span:after {
+	content: "";
+	position: absolute;
+	width: 2vmin;
+	height: 2vmin;
+	top: 4.85vmin;
+	left: 29.7vmin;
+	background: var(--luz3);
+	background-size: 100% 0.35vmin;
+	box-shadow: -2px -20.1vmin 0 0 var(--luz3);
+	color: #601d44;
+	z-index: 3;
+	transform: translateZ(1.8vmin);
+}
+
+.floor.five .side:nth-of-type(1):after {
+	display: none;
+}
+
+.roof.five .side:nth-child(-n+4):before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 3vmin;
+	top: -3vmin;
+	background: var(--dot3), var(--dot2), var(--dot1), var(--dot1), var(--dot1), var(--dot1), var(--dot1), var(--dot1);
+	background-position: -16.2vmin 1.825vmin, -16.7vmin 0.5vmin, -15.72vmin 0.65vmin, -17.57vmin 0.5vmin, -17.2vmin 0.25vmin, -16.5vmin 0.1vmin , -17.4vmin 0.95vmin, -15.175vmin 0.95vmin;
+	background-repeat: no-repeat;
+	filter: drop-shadow(16px 0px 0px var(--bush)) drop-shadow(24vmin 0px 0px var(--bush)) drop-shadow(8vmin 0px 0px var(--bush));
+}
+
+
+/* F 6 */
+.floor.six .side:nth-of-type(1):before {
+	left: -0.1vmin;
+	box-shadow: 0.025vmin 0.7vmin 0.25vmin 0.125vmin #0006 inset;
+	width: 40.25%;
+	background: repeating-linear-gradient(90deg, #101010, transparent), repeating-linear-gradient(90deg, #383e70 0 calc(100% - 0.25vmin), var(--frame) calc(100% - 0.25vmin) 100%);
+	background-size: 0.25vmin 100%, 8vmin 100%;
+}
+
+.floor.six .side:nth-of-type(1):after {
+	left: 60%;
+	width: 40%;
+	background: repeating-linear-gradient(90deg, #101010, transparent), repeating-linear-gradient(90deg, #383e70 0 calc(100% - 0.25vmin), var(--frame) calc(100% - 0.25vmin) 100%);
+	background-size: 0.25vmin 100%, 8vmin 100%;
+}
+
+.floor.six .side span {
+	left: 40.5%;
+	width: 19%;
+	background: #0a0a0a;
+}
+
 
 
 /***  RIGHT SIDE  ***/
@@ -316,6 +431,103 @@ span {
 .floor.three .side:nth-of-type(3) span:after {
 	left: 51%;
 	background: linear-gradient(175.25deg, var(--luz2) 25%, var(--luz3) calc(25% + 1px)), var(--luz1);
+}
+
+
+
+/* F 4 */
+.floor.four .side:nth-of-type(3):before, .floor.four .side:nth-of-type(3):after {
+	left: 35.25%;
+	background: repeating-linear-gradient(90deg, #1d1e26, transparent), repeating-linear-gradient(90deg, #383e70 0 calc(100% - 0.25vmin), var(--frame) calc(100% - 0.25vmin) 100%);
+	background-size: 2.5vmin 100%, 33vmin 100%;
+}
+
+.floor.four .side:nth-of-type(3):after {
+	left: 0%;
+	background: var(--luz3);
+	box-shadow: none;
+}
+
+.floor.four .side:nth-of-type(3) span:before {
+	content: "";
+	position: absolute;
+	width: 2vmin;
+	bottom: -0.85vmin;
+	border: 2.25vmin solid #fff0;
+	border-left: 5.5vmin solid var(--luz2);
+	border-top: 0.5vmin solid #fff0;
+	left: 6.5vmin;
+	height: 1vmin;
+	border-radius: 100%;
+	transform: rotate(-9deg);
+	filter: drop-shadow(0px 2px 0px var(--luz2));
+}
+
+.floor.four .side:nth-of-type(3) span:after {
+	content: "";
+	position: absolute;
+	width: 3.5vmin;
+	bottom: 2.55vmin;
+	background: var(--luz2);
+	left: 12.02vmin;
+	height: 0.65vmin;
+	border-radius: 100%;
+}
+
+
+
+/* F 5 */
+.floor.five .side:nth-of-type(3):before,
+.floor.seven .side:nth-of-type(3):before {
+	left: 35.25%;
+	width: 34.25%;
+	top: -1px;
+	background: #2c315a;
+	box-shadow: -1.975vmin 1.75vmin 1.5vmin 0.125vmin #0005 inset, 0.025vmin 1.75vmin 0.4vmin 0.125vmin #0002 inset;
+}
+
+.floor.five .side:nth-of-type(3):after,
+.floor.seven .side:nth-of-type(3):after {
+	left: 70.75%;
+	width: 29.25%;
+	top: -1px;
+	background: #2c315a;
+	box-shadow: -1.975vmin 1.75vmin 1.5vmin 0.125vmin #0005 inset, 0.025vmin 1.75vmin 0.4vmin 0.125vmin #0002 inset;
+}
+
+.roof.five .side:nth-child(3):before {
+	filter: drop-shadow(3vmin 0px 0px var(--bush)) drop-shadow(6vmin 0px 0px var(--bush))  drop-shadow(10vmin 0px 0px var(--bush)) drop-shadow(-30vmin 0px 0px var(--bush))  drop-shadow(30vmin 1px 0px var(--bush)) drop-shadow(25px -2px 0px var(--bush)) drop-shadow(25px 0px 0px var(--bush));
+}
+
+.floor.five .side:nth-of-type(3) span,
+.floor.seven .side:nth-of-type(3) span {
+	left: 0%;
+	width: 33.5%;
+	background: conic-gradient(from 180deg at 70% 40%, var(--luz3) 0 23.65%,  var(--luz2) 0 100% );
+}
+
+.floor.five .side:nth-of-type(3) span:before {
+	display: none;
+	left: 0%;
+	bottom: 2vmin;
+	top: inherit;
+	width: 66%;
+	background: var(--luz3);
+	box-shadow: none;
+}
+
+
+
+/* F 6 */
+.floor.six .side:nth-of-type(3):before,
+.floor.six .side:nth-of-type(3):after  {
+	left: 0;
+	background: repeating-linear-gradient(90deg, #1d1e26, transparent), repeating-linear-gradient(90deg, #383e70 0 calc(100% - 0.25vmin), var(--frame) calc(100% - 0.25vmin) 100%);
+	background-size: 1.85vmin 100%, 33vmin 100%;
+}
+
+.floor.six .side:nth-of-type(3):after {
+	left: 35.25%;
 }
 
 
