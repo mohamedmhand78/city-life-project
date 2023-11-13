@@ -42,6 +42,10 @@ body {
 	animation: start-glass 3s var(--cbz) 0s 1;
 }
 
+/* @keyframes start-glass {
+	0% { --glass: 200deg; }
+	100% { --glass: 337deg; }
+} */
 
 .content:before {
 	content: "";
@@ -53,7 +57,8 @@ body {
 	background-size:  100% 300%;
 	background-position: 0% 10%;
 	transform: translateZ(-100vmin);
-	
+	/* transition: all 3s var(--cbz) 0s;
+	animation: start-bg 3s var(--cbz) 0s 1; */
 }
 
 .content:after {
@@ -65,6 +70,7 @@ body {
 	--s2: radial-gradient(0.2vmin 0.2vmin at 50% 50%, #ffffff, #fff0);
 	background-image: var(--s1),var(--s1), var(--s1),var(--s2), var(--s2),var(--s1), var(--s2),var(--s1), var(--s2),var(--s1), var(--s2),var(--s1), var(--s2),var(--s1), var(--s1),var(--s2), var(--s2),var(--s1), var(--s1),var(--s2), var(--s1),var(--s1);
 	background-repeat: repeat-x;
+	background-size: 26% 25%, 43.33% 33.33%, 50% 80%, 20% 20%, 33.33% 75.33%, 26% 73%, 39.33% 22%, 33.33% 26%, 31% 32%, 14.33% 35.33%, 18.33% 62.33%, 39.33% 86.33%, 29.33% 69%, 12.33% 30.33%, 29.33% 41.33%, 22.33% 46.33%, 35.33% 27.33%, 22.33% 39.33%, 20.33% 44.33%, 33.33% 56.33%;
 	filter: drop-shadow(0px 0px 2px #fff) drop-shadow(0px 0px 5px #fff);
 	background-position: -8% -10%;
 	transform: translateZ(-100vmin);
@@ -79,6 +85,21 @@ input#day-night:checked ~ .content:before {
 	transition: all 3s var(--cbz) 0s;
 }
 
+/* input#day-night:checked ~ .content:after {
+	top: -100%;
+	transition: all 3s var(--cbz) 0s;
+} */
+
+/* @keyframes start-stars {
+	0% { top: -100%; }
+	100% { top: 0%; }
+}
+
+@keyframes start-bg {
+	0% { background-position: 0% 90%; }
+	100% { background-position: 0% 10%; }
+}
+ */
 
 .moon-sun {
 	position: absolute;
@@ -88,9 +109,11 @@ input#day-night:checked ~ .content:before {
 	margin-left: 90vmin;
 	border-radius: 100%;
 	background-repeat: no-repeat;
+	/* animation: change-sm 3s var(--cbz) 0s 1;
+	animation-fill-mode: forwards;
 	background: radial-gradient(circle at 45% 55%, #fff -13%, yellow 35%, orange 90%, #fff0 90%);
-	box-shadow: 0 0 6em 3em #ff9800, 0 0 8em 0 #ff9800 inset, 0 0 20px 5px #fdfdfd;
-	--moon: 
+	box-shadow: 0 0 6em 3em #ff9800, 0 0 8em 0 #ff9800 inset, 0 0 20px 5px #fdfdfd; */
+	background: 
 		radial-gradient( circle at 26% 71%, #ffffff 8%, #fff0 12% ), 
 		radial-gradient( circle at 23% 75%, #ccc 0% 1%, #fff0 10% ), 
 		radial-gradient( circle at 14% 42%, #fdfdfd 7%, #fff0 11% ), 
@@ -100,6 +123,30 @@ input#day-night:checked ~ .content:before {
 		radial-gradient(circle at 83% 25%, #fff0 10vmin, #fff calc(10vmin + 1px));
 	filter: drop-shadow(0px 1px 6vmin #6493a9) drop-shadow(0px 1px 6vmin #fdfdfd);		
 }
+
+input#day-night:checked ~ .content .moon-sun {
+	animation: change-ms 3s var(--cbz) 0s 1 reverse;
+	animation-fill-mode: forwards;
+}
+
+
+/* @keyframes change-sm {
+	0% { bottom: 70vmin; }
+	45%, 55% { bottom: -35vmin; }
+	49% { background: #ffeb3b; filter: drop-shadow(0px 1px 6vmin #ff9800) drop-shadow(0px 1px 6vmin #fdfdfd); }
+	50% {  background: var(--moon); }
+	100% { bottom: 70vmin;  background: var(--moon);filter: drop-shadow(0px 1px 6vmin #6493a9) drop-shadow(0px 1px 6vmin #fdfdfd); box-shadow: none; }
+}
+
+@keyframes change-ms {
+	0% { bottom: 70vmin; }
+	45%, 55% { bottom: -35vmin; }
+	49% { background: #ffeb3b; filter: drop-shadow(0px 1px 6vmin #ff9800) drop-shadow(0px 1px 6vmin #fdfdfd); }
+	50% {  background: var(--moon); }
+	100% { bottom: 70vmin;  background: var(--moon);filter: drop-shadow(0px 1px 6vmin #6493a9) drop-shadow(0px 1px 6vmin #fdfdfd); box-shadow: none; }
+} */
+
+
 
 
 /*** CUBOID ***/
